@@ -10,13 +10,19 @@
             "owner": "php-repos",
             "repo": "test-runner",
             "version": "v1.0.0",
-            "hash": "c5ee7b5d9a228b6e833af414359d486609ee530d"
+            "hash": "30f3ce06c760719c7a107532b6755f9882c57b83"
         },
         "https:\/\/github.com\/php-repos\/cli.git": {
             "owner": "php-repos",
             "repo": "cli",
             "version": "v1.0.0",
-            "hash": "f7c1eecaee1fbf01f4ea90a375ae8a3cd4944b3e"
+            "hash": "9d8bd24f9d31b5bf18bc01e89053d311495f714d"
+        },
+        "https:\/\/github.com\/php-repos\/file-manager.git": {
+            "owner": "php-repos",
+            "repo": "file-manager",
+            "version": "v1.0.0",
+            "hash": "b120a464839922b0a208bc198fbc06b491f08ee0"
         }
     }
 }
