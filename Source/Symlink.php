@@ -1,6 +1,6 @@
 <?php
 
-namespace Saeghe\FileManager\Symlink;
+namespace PhpRepos\FileManager\Symlink;
 
 use function unlink;
 

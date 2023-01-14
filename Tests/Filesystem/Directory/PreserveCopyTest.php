@@ -2,9 +2,10 @@
 
 namespace Tests\Filesystem\Directory\PreserveCopyTest;
 
-use Saeghe\FileManager\Filesystem\Directory;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\FileManager\Filesystem\Directory;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should copy directory by preserving permission',

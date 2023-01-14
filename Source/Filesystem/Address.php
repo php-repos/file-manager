@@ -1,9 +1,9 @@
 <?php
 
-namespace Saeghe\FileManager\Filesystem;
+namespace PhpRepos\FileManager\Filesystem;
 
-use Saeghe\Datatype\Str;
-use Saeghe\FileManager\Path;
+use PhpRepos\Datatype\Str;
+use PhpRepos\FileManager\Path;
 use function file_exists;
 
 trait Address

@@ -1,8 +1,8 @@
 <?php
 
-namespace Saeghe\FileManager\Filesystem;
+namespace PhpRepos\FileManager\Filesystem;
 
-use Saeghe\Datatype\Tree;
+use PhpRepos\Datatype\Tree;
 
 class FilesystemTree extends Tree
 {

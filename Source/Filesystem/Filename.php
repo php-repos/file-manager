@@ -1,8 +1,8 @@
 <?php
 
-namespace Saeghe\FileManager\Filesystem;
+namespace PhpRepos\FileManager\Filesystem;
 
-use Saeghe\Datatype\Text;
+use PhpRepos\Datatype\Text;
 
 class Filename extends Text
 {

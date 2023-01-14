@@ -1,6 +1,6 @@
 <?php
 
-namespace Saeghe\FileManager\File;
+namespace PhpRepos\FileManager\File;
 
 use Generator;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Saeghe\FileManager\Filesystem;
+namespace PhpRepos\FileManager\Filesystem;
 
-use Saeghe\Datatype\Collection;
+use PhpRepos\Datatype\Collection;
 
 class FilesystemCollection extends Collection
 {

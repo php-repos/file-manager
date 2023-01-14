@@ -2,12 +2,13 @@
 
 namespace Tests\FileType\Json\WriteTest;
 
-use Saeghe\FileManager\Path;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\FileManager\Directory\clean;
-use function Saeghe\FileManager\FileType\Json\to_array;
-use function Saeghe\FileManager\FileType\Json\write;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\FileManager\Path;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\FileManager\Directory\clean;
+use function PhpRepos\FileManager\FileType\Json\to_array;
+use function PhpRepos\FileManager\FileType\Json\write;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should write associated array to json file',

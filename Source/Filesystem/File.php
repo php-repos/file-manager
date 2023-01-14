@@ -1,19 +1,19 @@
 <?php
 
-namespace Saeghe\FileManager\Filesystem;
+namespace PhpRepos\FileManager\Filesystem;
 
 use Generator;
-use Saeghe\FileManager\Path;
+use PhpRepos\FileManager\Path;
 use Stringable;
-use function Saeghe\FileManager\File\chmod;
-use function Saeghe\FileManager\File\content;
-use function Saeghe\FileManager\File\create;
-use function Saeghe\FileManager\File\delete;
-use function Saeghe\FileManager\File\exists;
-use function Saeghe\FileManager\File\lines;
-use function Saeghe\FileManager\File\modify;
-use function Saeghe\FileManager\File\permission;
-use function Saeghe\FileManager\File\preserve_copy;
+use function PhpRepos\FileManager\File\chmod;
+use function PhpRepos\FileManager\File\content;
+use function PhpRepos\FileManager\File\create;
+use function PhpRepos\FileManager\File\delete;
+use function PhpRepos\FileManager\File\exists;
+use function PhpRepos\FileManager\File\lines;
+use function PhpRepos\FileManager\File\modify;
+use function PhpRepos\FileManager\File\permission;
+use function PhpRepos\FileManager\File\preserve_copy;
 
 class File implements Stringable
 {

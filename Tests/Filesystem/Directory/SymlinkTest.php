@@ -2,10 +2,11 @@
 
 namespace Tests\Filesystem\Directory\SymlinkTest;
 
-use Saeghe\FileManager\Filesystem\Directory;
-use Saeghe\FileManager\Filesystem\Symlink;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\FileManager\Filesystem\Directory;
+use PhpRepos\FileManager\Filesystem\Symlink;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should return symlink for the given directory',

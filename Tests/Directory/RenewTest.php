@@ -2,12 +2,13 @@
 
 namespace Tests\Directory\RenewTest;
 
-use Saeghe\FileManager\Path;
-use Saeghe\FileManager\Directory;
-use Saeghe\FileManager\File;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_false;
+use PhpRepos\FileManager\Path;
+use PhpRepos\FileManager\Directory;
+use PhpRepos\FileManager\File;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_false;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should clean directory when directory exists',

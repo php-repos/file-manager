@@ -2,9 +2,10 @@
 
 namespace Tests\Filesystem\Filename\FilenameTest;
 
-use Saeghe\Datatype\Text;
-use Saeghe\FileManager\Filesystem\Filename;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\Datatype\Text;
+use PhpRepos\FileManager\Filesystem\Filename;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it implements Text datatype',

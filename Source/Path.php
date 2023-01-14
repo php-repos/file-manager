@@ -1,14 +1,14 @@
 <?php
 
-namespace Saeghe\FileManager;
+namespace PhpRepos\FileManager;
 
 use InvalidArgumentException;
-use Saeghe\Datatype\Text;
-use Saeghe\FileManager\Filesystem\Address;
-use Saeghe\FileManager\Filesystem\Directory;
-use Saeghe\FileManager\Filesystem\File;
-use Saeghe\FileManager\Filesystem\Symlink;
-use function Saeghe\Datatype\Str\starts_with_regex;
+use PhpRepos\Datatype\Text;
+use PhpRepos\FileManager\Filesystem\Address;
+use PhpRepos\FileManager\Filesystem\Directory;
+use PhpRepos\FileManager\Filesystem\File;
+use PhpRepos\FileManager\Filesystem\Symlink;
+use function PhpRepos\Datatype\Str\starts_with_regex;
 
 class Path extends Text
 {

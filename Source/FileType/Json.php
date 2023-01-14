@@ -1,6 +1,6 @@
 <?php
 
-namespace Saeghe\FileManager\FileType\Json;
+namespace PhpRepos\FileManager\FileType\Json;
 
 function to_array(string $path): array
 {

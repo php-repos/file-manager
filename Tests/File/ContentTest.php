@@ -2,11 +2,12 @@
 
 namespace Tests\File\ContentTest;
 
-use Saeghe\FileManager\Path;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\FileManager\File\content;
-use function Saeghe\FileManager\File\delete;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\FileManager\Path;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\FileManager\File\content;
+use function PhpRepos\FileManager\File\delete;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should get file content',

@@ -2,8 +2,9 @@
 
 namespace Tests\Resolver\RealpathTest;
 
-use function Saeghe\FileManager\Resolver\realpath;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\FileManager\Resolver\realpath;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should return real path for the given path',

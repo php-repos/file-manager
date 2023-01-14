@@ -2,10 +2,11 @@
 
 namespace Tests\Filesystem\Directory\RecursivelyTest;
 
-use Saeghe\Datatype\Pair;
-use Saeghe\FileManager\Filesystem\Directory;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\Datatype\Pair;
+use PhpRepos\FileManager\Filesystem\Directory;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should return subdirectories recursively',

@@ -2,11 +2,12 @@
 
 namespace Tests\Filesystem\Directory\ItemTest;
 
-use Saeghe\FileManager\Filesystem\Directory;
-use Saeghe\FileManager\Filesystem\File;
-use Saeghe\FileManager\Filesystem\Symlink;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\FileManager\Filesystem\Directory;
+use PhpRepos\FileManager\Filesystem\File;
+use PhpRepos\FileManager\Filesystem\Symlink;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should return correspond object for the item',

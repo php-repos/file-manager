@@ -2,13 +2,14 @@
 
 namespace Tests\Directory\ExistsTest;
 
-use Saeghe\FileManager\Path;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\FileManager\Directory\delete;
-use function Saeghe\FileManager\Directory\delete_recursive;
-use function Saeghe\FileManager\Directory\exists;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_false;
+use PhpRepos\FileManager\Path;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\FileManager\Directory\delete;
+use function PhpRepos\FileManager\Directory\delete_recursive;
+use function PhpRepos\FileManager\Directory\exists;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_false;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should return false when directory is not exists',

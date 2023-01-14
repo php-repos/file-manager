@@ -1,8 +1,8 @@
 <?php
 
-namespace Saeghe\FileManager\Resolver;
+namespace PhpRepos\FileManager\Resolver;
 
-use Saeghe\Datatype\Str;
+use PhpRepos\Datatype\Str;
 
 function realpath(string $path_string): string
 {

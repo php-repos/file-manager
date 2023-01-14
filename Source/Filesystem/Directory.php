@@ -1,23 +1,23 @@
 <?php
 
-namespace Saeghe\FileManager\Filesystem;
+namespace PhpRepos\FileManager\Filesystem;
 
-use Saeghe\FileManager\Path;
+use PhpRepos\FileManager\Path;
 use Stringable;
-use function Saeghe\FileManager\Directory\chmod;
-use function Saeghe\FileManager\Directory\clean;
-use function Saeghe\FileManager\Directory\delete;
-use function Saeghe\FileManager\Directory\delete_recursive;
-use function Saeghe\FileManager\Directory\exists;
-use function Saeghe\FileManager\Directory\exists_or_create;
-use function Saeghe\FileManager\Directory\ls;
-use function Saeghe\FileManager\Directory\ls_all;
-use function Saeghe\FileManager\Directory\make;
-use function Saeghe\FileManager\Directory\make_recursive;
-use function Saeghe\FileManager\Directory\permission;
-use function Saeghe\FileManager\Directory\preserve_copy;
-use function Saeghe\FileManager\Directory\renew;
-use function Saeghe\FileManager\Directory\renew_recursive;
+use function PhpRepos\FileManager\Directory\chmod;
+use function PhpRepos\FileManager\Directory\clean;
+use function PhpRepos\FileManager\Directory\delete;
+use function PhpRepos\FileManager\Directory\delete_recursive;
+use function PhpRepos\FileManager\Directory\exists;
+use function PhpRepos\FileManager\Directory\exists_or_create;
+use function PhpRepos\FileManager\Directory\ls;
+use function PhpRepos\FileManager\Directory\ls_all;
+use function PhpRepos\FileManager\Directory\make;
+use function PhpRepos\FileManager\Directory\make_recursive;
+use function PhpRepos\FileManager\Directory\permission;
+use function PhpRepos\FileManager\Directory\preserve_copy;
+use function PhpRepos\FileManager\Directory\renew;
+use function PhpRepos\FileManager\Directory\renew_recursive;
 
 class Directory implements Stringable
 {

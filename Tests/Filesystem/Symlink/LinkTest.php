@@ -2,12 +2,13 @@
 
 namespace Tests\Filesystem\Symlink\LinkTest;
 
-use Saeghe\FileManager\Filesystem\File;
-use Saeghe\FileManager\Filesystem\Symlink;
+use PhpRepos\FileManager\Filesystem\File;
+use PhpRepos\FileManager\Filesystem\Symlink;
 use function file_exists;
 use function readlink;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should link a symlink',

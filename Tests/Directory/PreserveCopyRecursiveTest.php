@@ -2,13 +2,14 @@
 
 namespace Tests\Directory\PreserveCopyRecursiveTest;
 
-use Saeghe\FileManager\Path;
-use Saeghe\FileManager\Directory;
-use function Saeghe\FileManager\Directory\preserve_copy_recursively;
-use function Saeghe\FileManager\File\exists;
-use function Saeghe\FileManager\File\permission;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\FileManager\Path;
+use PhpRepos\FileManager\Directory;
+use function PhpRepos\FileManager\Directory\preserve_copy_recursively;
+use function PhpRepos\FileManager\File\exists;
+use function PhpRepos\FileManager\File\permission;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should copy directory recursively by preserving permission',

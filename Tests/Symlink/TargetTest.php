@@ -2,13 +2,14 @@
 
 namespace Tests\Symlink\LinkTest;
 
-use Saeghe\FileManager\Path;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\FileManager\Symlink\link;
-use function Saeghe\FileManager\Symlink\target;
-use function Saeghe\FileManager\File\create;
-use function Saeghe\FileManager\File\delete;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\FileManager\Path;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\FileManager\Symlink\link;
+use function PhpRepos\FileManager\Symlink\target;
+use function PhpRepos\FileManager\File\create;
+use function PhpRepos\FileManager\File\delete;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should return target path to the link',

@@ -1,8 +1,8 @@
 <?php
 
-namespace Saeghe\FileManager\Directory;
+namespace PhpRepos\FileManager\Directory;
 
-use function Saeghe\FileManager\File\preserve_copy as preserve_copy_file;
+use function PhpRepos\FileManager\File\preserve_copy as preserve_copy_file;
 
 function chmod(string $path, int $permission): bool
 {

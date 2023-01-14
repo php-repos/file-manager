@@ -1,12 +1,12 @@
 <?php
 
-namespace Saeghe\FileManager\Filesystem;
+namespace PhpRepos\FileManager\Filesystem;
 
-use Saeghe\FileManager\Path;
+use PhpRepos\FileManager\Path;
 use Stringable;
-use function Saeghe\FileManager\Symlink\delete;
-use function Saeghe\FileManager\Symlink\exists;
-use function Saeghe\FileManager\Symlink\link;
+use function PhpRepos\FileManager\Symlink\delete;
+use function PhpRepos\FileManager\Symlink\exists;
+use function PhpRepos\FileManager\Symlink\link;
 
 class Symlink implements Stringable
 {

@@ -2,10 +2,11 @@
 
 namespace Tests\Filesystem\Directory\ListAllTest;
 
-use Saeghe\FileManager\Filesystem\Directory;
-use Saeghe\FileManager\Filesystem\FilesystemCollection;
-use function Saeghe\FileManager\Resolver\root;
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use PhpRepos\FileManager\Filesystem\Directory;
+use PhpRepos\FileManager\Filesystem\FilesystemCollection;
+use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should return list of files and sub directories in the given directory contain hidden files',
