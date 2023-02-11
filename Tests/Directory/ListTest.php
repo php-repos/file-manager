@@ -13,7 +13,10 @@ test(
     title: 'it should return list of files and sub directories in the given directory',
     case: function (Path $directory) {
         assert_true(
-            ['sample.txt', 'sub-directory'] === Directory\ls($directory),
+            [
+                $directory->append('sample.txt'),
+                $directory->append('sub-directory'),
+            ] == Directory\ls($directory)->items(),
             'Directory list is not working properly.'
         );
 
@@ -37,7 +40,7 @@ test(
     title: 'it should return empty array when directory is empty',
     case: function (Path $directory) {
         assert_true(
-            [] === Directory\ls($directory),
+            [] === Directory\ls($directory)->items(),
             'Directory list is not working properly.'
         );
 

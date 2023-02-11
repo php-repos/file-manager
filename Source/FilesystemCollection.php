@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpRepos\FileManager\Filesystem;
+namespace PhpRepos\FileManager;
 
 use PhpRepos\Datatype\Collection;
 
