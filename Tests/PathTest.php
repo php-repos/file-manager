@@ -2,12 +2,7 @@
 
 namespace Tests\PathTest;
 
-use Exception;
-use InvalidArgumentException;
 use PhpRepos\FileManager\Path;
-use PhpRepos\FileManager\Filesystem\Directory;
-use PhpRepos\FileManager\Filesystem\File;
-use PhpRepos\FileManager\Filesystem\Symlink;
 use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
 use function PhpRepos\TestRunner\Assertions\Boolean\assert_false;
 use function PhpRepos\TestRunner\Runner\test;
@@ -60,7 +55,7 @@ test(
 );
 
 test(
-    title: 'it should create path by calling fromString method',
+    title: 'it should create path by calling from_string method',
     case: function () {
         assert_true(
             DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . 'home' . DIRECTORY_SEPARATOR . 'directory'
@@ -153,11 +148,11 @@ test(
         $path = Path::from_string('/user/home/directory/filename.extension');
 
         assert_true(
-            $path->parent() instanceof Directory
+            $path->parent() instanceof Path
             &&
             DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . 'home' . DIRECTORY_SEPARATOR . 'directory'
             ===
-            $path->parent()->path->string()
+            $path->parent()->string()
             &&
             DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . 'home' . DIRECTORY_SEPARATOR . 'directory' . DIRECTORY_SEPARATOR . 'filename.extension'
             ===
@@ -167,22 +162,11 @@ test(
 );
 
 test(
-    title: 'it should check if the given file exists',
-    case: function () {
-        assert_true(Path::from_string(__FILE__)->exists());
-        assert_false(Path::from_string(__FILE__)->append('not_exists.txt')->exists());
-
-        assert_true(Path::from_string(__DIR__)->exists());
-        assert_false(Path::from_string(__DIR__)->append('not_exists')->exists());
-    }
-);
-
-test(
     title: 'it should detect the leaf',
     case: function () {
-        assert_true(Path::from_string('/')->string() === Path::from_string('/')->leaf(), 'root leaf is not detected');
-        assert_true('PathTest.php' === Path::from_string(__FILE__)->leaf(), 'leaf for file is not detected');
-        assert_true('Tests' === Path::from_string(__DIR__)->leaf(), 'leaf for directory is not detected');
+        assert_true(Path::from_string('/')->string() === Path::from_string('/')->leaf()->string(), 'root leaf is not detected');
+        assert_true('PathTest.php' === Path::from_string(__FILE__)->leaf()->string(), 'leaf for file is not detected');
+        assert_true('Tests' === Path::from_string(__DIR__)->leaf()->string(), 'leaf for directory is not detected');
     }
 );
 
@@ -194,95 +178,6 @@ test(
 
         assert_true($sibling instanceof Path);
         assert_true($address->parent()->append('sibling')->string() === $sibling->string());
-    }
-);
-
-test(
-    title: 'it should convert to file',
-    case: function () {
-        $address = Path::from_string('/root/user/home/file.txt');
-        $file = $address->as_file();
-
-        assert_true($file instanceof File);
-        assert_true($address->string() === $file->path->string());
-    }
-);
-
-test(
-    title: 'it should convert to directory',
-    case: function () {
-        $address = Path::from_string('/root/user/home/directory');
-        $directory = $address->as_directory();
-
-        assert_true($directory instanceof Directory);
-        assert_true($address->string() === $directory->path->string());
-    }
-);
-
-test(
-    title: 'it should convert to symlink',
-    case: function () {
-        $address = Path::from_string('/root/user/home/file.txt');
-        $symlink = $address->as_symlink();
-
-        assert_true($symlink instanceof Symlink);
-        assert_true($address->string() === $symlink->path->string());
-    }
-);
-
-test(
-    title: 'it should not accept empty string',
-    case: function () {
-        try {
-            new Path('');
-            assert_true(false, 'code should not reach to this point');
-        } catch (Exception $exception) {
-            assert_true($exception instanceof InvalidArgumentException);
-            assert_true('Invalid string passed to path.' === $exception->getMessage());
-        }
-    }
-);
-
-test(
-    title: 'it should accept linux format path',
-    case: function () {
-        $path = new Path('/root/file');
-        assert_true('/root/file' === $path->string());
-    }
-);
-
-test(
-    title: 'it should not accept linux path if it does not start with root directory',
-    case: function () {
-        try {
-            new Path('root');
-            assert_true(false, 'code should not reach to this point');
-        } catch (Exception $exception) {
-            assert_true($exception instanceof InvalidArgumentException);
-            assert_true('Invalid string passed to path.' === $exception->getMessage());
-        }
-    }
-);
-
-
-test(
-    title: 'it should accept windows format path',
-    case: function () {
-        $path = new Path('c:\windows\system32');
-        assert_true('c:\windows\system32' === $path->string());
-    }
-);
-
-test(
-    title: 'it should not accept windows path if it does not start with drive letter',
-    case: function () {
-        try {
-            new Path('ftp:\\');
-            assert_true(false, 'code should not reach to this point');
-        } catch (Exception $exception) {
-            assert_true($exception instanceof InvalidArgumentException);
-            assert_true('Invalid string passed to path.' === $exception->getMessage());
-        }
     }
 );
 

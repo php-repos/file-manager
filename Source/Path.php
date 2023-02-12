@@ -2,24 +2,13 @@
 
 namespace PhpRepos\FileManager;
 
-use InvalidArgumentException;
 use PhpRepos\Datatype\Text;
-use PhpRepos\FileManager\Filesystem\Address;
-use PhpRepos\FileManager\Filesystem\Directory;
-use PhpRepos\FileManager\Filesystem\File;
-use PhpRepos\FileManager\Filesystem\Symlink;
-use function PhpRepos\Datatype\Str\starts_with_regex;
+use PhpRepos\Datatype\Str;
 
 class Path extends Text
 {
-    use Address;
-
-    public function __construct(?string $init = null)
+    public function __construct(string $init)
     {
-        if (! $this->is_valid($init)) {
-            throw new InvalidArgumentException('Invalid string passed to path.');
-        }
-
         parent::__construct($init);
     }
 
@@ -28,28 +17,36 @@ class Path extends Text
         return new static(Resolver\realpath($path_string));
     }
 
-    public function append(string $path): Path
+    public function append(Filename|string $path): Path
     {
         return Path::from_string($this . DIRECTORY_SEPARATOR . $path);
     }
 
-    public function as_file(): File
+    public function leaf(): Filename
     {
-        return new File($this);
+        if (strlen($this) === 1) {
+            return new Filename($this);
+        }
+
+        $leaf = Str\after_last_occurrence($this, DIRECTORY_SEPARATOR);
+
+        return new Filename($leaf ?? $this);
     }
 
-    public function as_directory(): Directory
+    public function parent(): static
     {
-        return new Directory($this);
+        return static::from_string(Str\before_last_occurrence($this, DIRECTORY_SEPARATOR));
     }
 
-    public function as_symlink(): Symlink
+    public function relocate(string $origin, string $destination): Path
     {
-        return new Symlink($this);
+        $path = Str\replace_first_occurrence($this, $origin, $destination);
+
+        return Path::from_string($path);
     }
 
-    public function is_valid(string $string): bool
+    public function sibling(string $path): Path
     {
-        return strlen($string) > 0 && (str_starts_with($string, '/') || starts_with_regex($string, '[A-Za-z]:\\'));
+        return new Path($this->parent()->append($path)->string());
     }
 }

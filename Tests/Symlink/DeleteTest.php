@@ -5,6 +5,7 @@ namespace Tests\Symlink\DeleteTest;
 use PhpRepos\FileManager\Path;
 use PhpRepos\FileManager\File;
 use function PhpRepos\FileManager\Resolver\root;
+use function PhpRepos\FileManager\Symlink\exists;
 use function PhpRepos\FileManager\Symlink\link;
 use function PhpRepos\FileManager\Symlink\delete;
 use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
@@ -15,8 +16,8 @@ test(
     title: 'it should delete the link',
     case: function (Path $file, Path $link) {
         assert_true(delete($link));
-        assert_true($file->exists());
-        assert_false($link->exists());
+        assert_true(File\exists($file));
+        assert_false(exists($link));
 
         return $file;
     },
@@ -24,7 +25,7 @@ test(
         $file = Path::from_string(root() . 'Tests/PlayGround/LinkSource');
         File\create($file, 'file content');
         $link = $file->parent()->append('symlink');
-        link($file->as_file(), $link);
+        link($file, $link);
 
         return [$file, $link];
     },

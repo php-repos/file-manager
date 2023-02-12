@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpRepos\FileManager\FileType\Json;
+namespace PhpRepos\FileManager\JsonFile;
 
 function to_array(string $path): array
 {
