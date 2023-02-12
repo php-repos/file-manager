@@ -8,8 +8,8 @@
     "executables": [],
     "packages-directory": "Packages",
     "packages": {
-        "git@github.com:php-repos\/test-runner.git": "v1.0.0",
-        "git@github.com:php-repos\/datatype.git": "v1.0.0"
+        "git@github.com:php-repos\/datatype.git": "v1.0.0",
+        "git@github.com:php-repos\/test-runner.git": "v1.0.2"
     },
     "aliases": {
         "test-runner": "git@github.com:php-repos\/test-runner.git",

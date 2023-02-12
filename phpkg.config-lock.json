@@ -9,8 +9,8 @@
         "git@github.com:php-repos\/test-runner.git": {
             "owner": "php-repos",
             "repo": "test-runner",
-            "version": "v1.0.0",
-            "hash": "30f3ce06c760719c7a107532b6755f9882c57b83"
+            "version": "v1.0.2",
+            "hash": "40c4989e99eda4f13c985f44d081bea321125200"
         },
         "https:\/\/github.com\/php-repos\/cli.git": {
             "owner": "php-repos",
@@ -21,8 +21,8 @@
         "https:\/\/github.com\/php-repos\/file-manager.git": {
             "owner": "php-repos",
             "repo": "file-manager",
-            "version": "v1.0.0",
-            "hash": "b120a464839922b0a208bc198fbc06b491f08ee0"
+            "version": "development",
+            "hash": "a4cd7755a8ffd7122433b6a2c471483148b9ecb4"
         }
     }
 }
