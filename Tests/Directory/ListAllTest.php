@@ -14,9 +14,9 @@ test(
     case: function (Path $directory) {
         assert_true(
             [
-                $directory->append('.hidden.txt'),
-                $directory->append('sample.txt'),
                 $directory->append('sub-directory'),
+                $directory->append('sample.txt'),
+                $directory->append('.hidden.txt'),
             ] == Directory\ls_all($directory)->items(),
             'Directory list all is not working properly.'
         );

@@ -28,26 +28,26 @@ test(
         assert_true(
             [
                 $directory,
-                $file1,
                 $subdirectory,
-                $hidden_directory,
-                $hidden_file,
                 $file2,
                 $file3,
+                $hidden_directory,
+                $hidden_file,
                 $symlink,
+                $file1,
             ] == $tree->vertices()->items(),
             'filesystem tree vertices not detected correctly'
         );
 
         assert_true(
             [
-                new Pair($directory, $file1),
                 new Pair($directory, $subdirectory),
-                new Pair($subdirectory, $hidden_directory),
-                new Pair($hidden_directory, $hidden_file),
                 new Pair($subdirectory, $file2),
                 new Pair($subdirectory, $file3),
+                new Pair($subdirectory, $hidden_directory),
+                new Pair($hidden_directory, $hidden_file),
                 new Pair($directory, $symlink),
+                new Pair($directory, $file1),
             ] == $tree->edges()->items(),
             'filesystem tree edges not detected correctly'
         );

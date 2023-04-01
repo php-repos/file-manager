@@ -71,12 +71,18 @@ function ls(string $path): FilesystemCollection
 function ls_all(string $path): FilesystemCollection
 {
     $path = Path::from_string($path);
+    $collection = new FilesystemCollection();
 
-    return array_reduce(
-        array_values(array_filter(scandir($path), fn ($item) => ! in_array($item, ['.', '..']))),
-        fn (FilesystemCollection $collection, string $item) => $collection->put($path->append($item)),
-        new FilesystemCollection()
-    );
+    if ($handle = opendir($path)) {
+        while (false !== ($item = readdir($handle))) {
+            if ($item !== '.' && $item !== '..') {
+                $collection = $collection->put($path->append($item));
+            }
+        }
+        closedir($handle);
+    }
+
+    return $collection;
 }
 
 function ls_recursively(string $path): FilesystemTree
