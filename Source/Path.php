@@ -4,6 +4,7 @@ namespace PhpRepos\FileManager;
 
 use PhpRepos\Datatype\Text;
 use PhpRepos\Datatype\Str;
+use function PhpRepos\FileManager\Resolver\realpath;
 
 class Path extends Text
 {
@@ -14,7 +15,7 @@ class Path extends Text
 
     public static function from_string(string $path_string): static
     {
-        return new static(Resolver\realpath($path_string));
+        return new static(realpath($path_string));
     }
 
     public function append(Filename|string $path): Path
