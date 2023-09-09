@@ -157,6 +157,9 @@ test(
             ===
             $path->string()
         );
+
+        $path = Path::from_string('relative_path');
+        assert_true($path->parent()->string() === '');
     }
 );
 
