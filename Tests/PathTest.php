@@ -159,7 +159,7 @@ test(
         );
 
         $path = Path::from_string('relative_path');
-        assert_true($path->parent()->string() === '');
+        assert_true($path->parent()->string() === '.');
     }
 );
 
@@ -180,6 +180,11 @@ test(
 
         assert_true($sibling instanceof Path);
         assert_true($address->parent()->append('sibling')->string() === $sibling->string());
+
+        $address = Path::from_string('console');
+        $sibling = $address->sibling('Source/Commands');
+
+        assert_true($sibling->string() === './Source/Commands');
     }
 );
 
