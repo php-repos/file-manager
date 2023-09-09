@@ -36,7 +36,10 @@ class Path extends Text
 
     public function parent(): static
     {
-        return static::from_string(Str\before_last_occurrence($this, DIRECTORY_SEPARATOR));
+        $parent = str_contains($this, DIRECTORY_SEPARATOR)
+            ? Str\before_last_occurrence($this, DIRECTORY_SEPARATOR)
+            : '';
+        return static::from_string($parent);
     }
 
     public function relocate(string $origin, string $destination): Path
