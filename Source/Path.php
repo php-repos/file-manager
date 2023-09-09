@@ -38,7 +38,7 @@ class Path extends Text
     {
         $parent = str_contains($this, DIRECTORY_SEPARATOR)
             ? Str\before_last_occurrence($this, DIRECTORY_SEPARATOR)
-            : '';
+            : '.';
         return static::from_string($parent);
     }
 
