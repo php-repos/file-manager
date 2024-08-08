@@ -7,7 +7,7 @@ use function PhpRepos\FileManager\Directory\clean;
 use function PhpRepos\FileManager\JsonFile\to_array;
 use function PhpRepos\FileManager\JsonFile\write;
 use function PhpRepos\FileManager\Resolver\root;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\assert_true;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(

@@ -5,7 +5,7 @@ namespace Tests\Directory\DeleteTest;
 use PhpRepos\FileManager\Path;
 use PhpRepos\FileManager\Directory;
 use function PhpRepos\FileManager\Resolver\root;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_false;
+use function PhpRepos\TestRunner\Assertions\assert_false;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(

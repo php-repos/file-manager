@@ -8,7 +8,7 @@ use function PhpRepos\FileManager\Directory\delete_recursive;
 use function PhpRepos\FileManager\File\create;
 use function PhpRepos\FileManager\File\permission;
 use function PhpRepos\FileManager\File\preserve_copy;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\assert_true;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(

@@ -6,8 +6,8 @@ use PhpRepos\FileManager\Path;
 use function PhpRepos\FileManager\Resolver\root;
 use function PhpRepos\FileManager\Directory\delete_recursive;
 use function PhpRepos\FileManager\Directory\is_empty;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_false;
+use function PhpRepos\TestRunner\Assertions\assert_true;
+use function PhpRepos\TestRunner\Assertions\assert_false;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(
