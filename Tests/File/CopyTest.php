@@ -7,7 +7,7 @@ use function PhpRepos\FileManager\Resolver\root;
 use function PhpRepos\FileManager\Directory\delete_recursive;
 use function PhpRepos\FileManager\File\copy;
 use function PhpRepos\FileManager\File\create;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\assert_true;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(

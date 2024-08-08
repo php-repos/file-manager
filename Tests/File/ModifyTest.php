@@ -9,7 +9,7 @@ use function PhpRepos\FileManager\File\create;
 use function PhpRepos\FileManager\File\modify;
 use function PhpRepos\FileManager\File\delete;
 use function PhpRepos\FileManager\File\exists;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\assert_true;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(

@@ -6,7 +6,7 @@ use PhpRepos\FileManager\Path;
 use function PhpRepos\FileManager\Resolver\root;
 use function PhpRepos\FileManager\File\content;
 use function PhpRepos\FileManager\File\delete;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\assert_true;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(

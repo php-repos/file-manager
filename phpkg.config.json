@@ -3,16 +3,16 @@
         "PhpRepos\\FileManager": "Source",
         "Tests": "Tests"
     },
-    "entry-points": [],
+    "autoloads": [],
     "excludes": [],
+    "entry-points": [],
     "executables": [],
+    "import-file": "phpkg.imports.php",
     "packages-directory": "Packages",
     "packages": {
-        "git@github.com:php-repos\/datatype.git": "v1.0.0",
-        "git@github.com:php-repos\/test-runner.git": "v1.0.2"
+        "git@github.com:php-repos\/datatype.git": "v2.0.0"
     },
     "aliases": {
-        "test-runner": "git@github.com:php-repos\/test-runner.git",
         "datatype": "git@github.com:php-repos\/datatype.git"
     }
 }

@@ -3,7 +3,7 @@
 namespace Tests\Resolver\RealpathTest;
 
 use function PhpRepos\FileManager\Resolver\realpath;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\assert_true;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(
