@@ -2,34 +2,35 @@
 
 namespace Tests\Symlink\DeleteTest;
 
-use PhpRepos\FileManager\Path;
-use PhpRepos\FileManager\File;
-use function PhpRepos\FileManager\Resolver\root;
-use function PhpRepos\FileManager\Symlink\exists;
-use function PhpRepos\FileManager\Symlink\link;
-use function PhpRepos\FileManager\Symlink\delete;
+use PhpRepos\FileManager\Files;
+use function PhpRepos\FileManager\Paths\append;
+use function PhpRepos\FileManager\Paths\root;
+use function PhpRepos\FileManager\Paths\sibling;
+use function PhpRepos\FileManager\Symlinks\exists;
+use function PhpRepos\FileManager\Symlinks\link;
+use function PhpRepos\FileManager\Symlinks\delete;
 use function PhpRepos\TestRunner\Assertions\assert_true;
 use function PhpRepos\TestRunner\Assertions\assert_false;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should delete the link',
-    case: function (Path $file, Path $link) {
+    case: function (string $file, string $link) {
         assert_true(delete($link));
-        assert_true(File\exists($file));
+        assert_true(Files\exists($file));
         assert_false(exists($link));
 
         return $file;
     },
     before: function () {
-        $file = Path::from_string(root() . 'Tests/PlayGround/LinkSource');
-        File\create($file, 'file content');
-        $link = $file->parent()->append('symlink');
+        $file = append(root(), 'Tests/PlayGround/LinkSource');
+        Files\create($file, 'file content');
+        $link = sibling($file, 'symlink');
         link($file, $link);
 
         return [$file, $link];
     },
-    after: function (Path $file) {
-        File\delete($file);
+    after: function (string $file) {
+        Files\delete($file);
     }
 );

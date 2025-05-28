@@ -10,7 +10,7 @@
     "import-file": "phpkg.imports.php",
     "packages-directory": "Packages",
     "packages": {
-        "git@github.com:php-repos\/datatype.git": "v3.0.0"
+        "git@github.com:php-repos\/datatype.git": "v4.0.0"
     },
     "aliases": {
         "datatype": "git@github.com:php-repos\/datatype.git"
