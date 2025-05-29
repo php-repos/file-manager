@@ -2,18 +2,18 @@
 
 namespace Tests\File\LinesTest;
 
-use PhpRepos\FileManager\Path;
-use PhpRepos\FileManager\File;
-use function PhpRepos\FileManager\Resolver\root;
+use PhpRepos\FileManager\Files;
+use function PhpRepos\FileManager\Paths\append;
+use function PhpRepos\FileManager\Paths\root;
 use function PhpRepos\TestRunner\Assertions\assert_true;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should read file\'s lines',
-    case: function (Path $file) {
+    case: function (string $file) {
         $results = [];
 
-        foreach (File\lines($file) as $n => $line) {
+        foreach (Files\lines($file) as $n => $line) {
             $results[$n] = $line;
         }
 
@@ -22,12 +22,12 @@ test(
         return $file;
     },
     before: function () {
-        $file = Path::from_string(root() . 'Tests/PlayGround/NewFile.txt');
-        File\create($file, 'First line.' . PHP_EOL . 'Second line.');
+        $file = append(root(), 'Tests/PlayGround/NewFile.txt');
+        Files\create($file, 'First line.' . PHP_EOL . 'Second line.');
 
         return $file;
     },
-    after: function (Path $file) {
-        File\delete($file);
+    after: function (string $file) {
+        Files\delete($file);
     }
 );

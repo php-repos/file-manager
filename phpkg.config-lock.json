@@ -3,8 +3,8 @@
         "git@github.com:php-repos\/datatype.git": {
             "owner": "php-repos",
             "repo": "datatype",
-            "version": "v3.0.0",
-            "hash": "7ec9a0712e3995f9b152d8378e664579e926cf8a"
+            "version": "v4.0.0",
+            "hash": "d29dc1c67d83217b20768a74a973f1b5fc4513ea"
         }
     }
 }
