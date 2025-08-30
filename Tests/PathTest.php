@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\PathTest;
 
 use PhpRepos\FileManager\Path;
 use function PhpRepos\Datatype\Str\assert_equal;

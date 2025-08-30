@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\JsonFileTest;
 
 use function PhpRepos\FileManager\Directories\clean;
 use function PhpRepos\FileManager\JsonFiles\to_array;

@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\File\PermissionTest;
 
 use PhpRepos\FileManager\Files;
 use function PhpRepos\FileManager\Paths\append;

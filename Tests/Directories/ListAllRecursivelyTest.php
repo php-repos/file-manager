@@ -9,14 +9,21 @@ use function PhpRepos\TestRunner\Assertions\assert_true;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(
-    title: 'it should return list of files and sub directories in the given directory contain hidden files (non-recursive, including hidden files)',
+    title: 'it should return list of files and sub directories recursively in the given directory (including hidden files)',
     case: function (string $directory) {
+        $actual = array_values(iterator_to_array(Directories\ls_all_recursively($directory)));
+        sort($actual);
+        
         $expected = [
-            append($directory, 'sub-directory'),
             append($directory, '.hidden.txt'),
             append($directory, 'sample.txt'),
+            append($directory, 'sub-directory'),
+            append($directory, 'sub-directory/.hidden-nested.txt'),
+            append($directory, 'sub-directory/nested.txt'),
         ];
-        assert_equal(Directories\ls_all($directory), $expected);
+        sort($expected);
+        
+        assert_equal($actual, $expected);
 
         return $directory;
     },
@@ -26,8 +33,8 @@ test(
         Directories\make(append($directory, 'sub-directory'));
         Files\create(append($directory, 'sample.txt'), '');
         Files\create(append($directory, '.hidden.txt'), '');
-        // Create a nested file to ensure non-recursive behavior
         Files\create(append($directory, 'sub-directory/nested.txt'), '');
+        Files\create(append($directory, 'sub-directory/.hidden-nested.txt'), '');
 
         return $directory;
     },
@@ -40,8 +47,8 @@ test(
     title: 'it should return empty array when directory is empty',
     case: function (string $directory) {
         assert_true(
-            [] === Directories\ls_all($directory),
-            'Directory list all is not working properly.'
+            [] === iterator_to_array(Directories\ls_all_recursively($directory)),
+            'Directory list all recursively is not working properly.'
         );
 
         return $directory;
@@ -52,7 +59,7 @@ test(
 
         return $directory;
     },
-    after: function ($directory) {
+    after: function (string $directory) {
         Directories\delete_recursive($directory);
     }
 );

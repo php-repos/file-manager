@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\File\ModifyTest;
 
 use function PhpRepos\FileManager\Paths\append;
 use function PhpRepos\FileManager\Paths\root;

@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\Directories\DeleteRecursiveTest;
 
 use function PhpRepos\FileManager\Paths\append;
 use function PhpRepos\FileManager\Paths\root;

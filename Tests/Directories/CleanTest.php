@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\Directories\CleanTest;
 
 use function PhpRepos\FileManager\Directories\clean;
 use function PhpRepos\FileManager\Paths\append;
