@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\Resolver\RootTest;
 
 use function PhpRepos\FileManager\Paths\root;
 use function PhpRepos\FileManager\Paths\realpath;

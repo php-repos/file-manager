@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\File\LinesTest;
 
 use PhpRepos\FileManager\Files;
 use function PhpRepos\FileManager\Paths\append;

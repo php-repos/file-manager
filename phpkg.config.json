@@ -1,7 +1,6 @@
 {
     "map": {
-        "PhpRepos\\FileManager": "Source",
-        "Tests": "Tests"
+        "PhpRepos\\FileManager": "Source"
     },
     "autoloads": [],
     "excludes": [],

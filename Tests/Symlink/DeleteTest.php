@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\Symlink\DeleteTest;
 
 use PhpRepos\FileManager\Files;
 use function PhpRepos\FileManager\Paths\append;

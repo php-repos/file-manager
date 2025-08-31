@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\File\ExistsTest;
 
 use function PhpRepos\FileManager\Paths\append;
 use function PhpRepos\FileManager\Paths\parent;

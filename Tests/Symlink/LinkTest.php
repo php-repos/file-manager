@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\Symlink\LinkTest;
 
 use function PhpRepos\FileManager\Paths\append;
 use function PhpRepos\FileManager\Paths\root;

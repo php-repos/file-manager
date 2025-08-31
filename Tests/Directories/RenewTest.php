@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\Directories\RenewTest;
 
 use PhpRepos\FileManager\Directories;
 use PhpRepos\FileManager\Files;

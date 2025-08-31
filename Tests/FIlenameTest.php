@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\FilenameTest;
 
 use PhpRepos\FileManager\Filename;
 use function PhpRepos\TestRunner\Assertions\assert_true;

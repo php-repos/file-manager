@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\Directories\ExistsOrCreate;
 
 use PhpRepos\FileManager\Directories;
 use function PhpRepos\FileManager\Paths\append;

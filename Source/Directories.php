@@ -105,16 +105,65 @@ function is_empty(string $path): bool
 }
 
 /**
+ * Lists directory contents (non-recursive), excluding hidden files.
+ *
+ * @param string $directory The path to the directory.
+ * @return array An array of file and directory paths.
+ */
+function ls(string $directory): array
+{
+    $items = [];
+    $iterator = new DirectoryIterator($directory);
+    
+    foreach ($iterator as $item) {
+        if (!$item->isDot() && basename($item->getPathname())[0] !== '.') {
+            $items[] = $item->getPathname();
+        }
+    }
+    
+    return $items;
+}
+
+/**
+ * Lists all directory contents (non-recursive) with an optional filter.
+ *
+ * @param string $directory The path to the directory.
+ * @param callable|null $filter An optional callback to filter paths.
+ * @return array An array of file and directory paths.
+ */
+function ls_all(string $directory, ?callable $filter = null): array
+{
+    $items = [];
+    $iterator = new DirectoryIterator($directory);
+    
+    foreach ($iterator as $item) {
+        if (!$item->isDot()) {
+            $pathname = $item->getPathname();
+            if (is_callable($filter)) {
+                if ($filter($pathname)) {
+                    $items[] = $pathname;
+                }
+            } else {
+                $items[] = $pathname;
+            }
+        }
+    }
+    
+    return $items;
+}
+
+/**
  * Lists directory contents recursively, excluding hidden files.
  *
  * @param string $directory The path to the directory.
+ * @param int|null $mode The iteration mode (e.g., RecursiveIteratorIterator::SELF_FIRST).
  * @return RecursiveIteratorIterator An iterator over the directory contents.
  */
-function ls(string $directory): RecursiveIteratorIterator
+function ls_recursively(string $directory, ?int $mode = null): RecursiveIteratorIterator
 {
-    return ls_all($directory, function ($current) {
+    return ls_all_recursively($directory, function ($current) {
         return basename($current)[0] !== '.';
-    });
+    }, $mode);
 }
 
 /**
@@ -125,7 +174,7 @@ function ls(string $directory): RecursiveIteratorIterator
  * @param int|null $mode The iteration mode (e.g., RecursiveIteratorIterator::SELF_FIRST).
  * @return RecursiveIteratorIterator An iterator over the directory contents.
  */
-function ls_all(string $directory, ?callable $filter = null, ?int $mode = null): RecursiveIteratorIterator
+function ls_all_recursively(string $directory, ?callable $filter = null, ?int $mode = null): RecursiveIteratorIterator
 {
     $mode = $mode ?: RecursiveIteratorIterator::SELF_FIRST;
     $iterator = new RecursiveDirectoryIterator(
@@ -147,7 +196,7 @@ function ls_all(string $directory, ?callable $filter = null, ?int $mode = null):
  */
 function ls_all_backward(string $directory, ?callable $filter = null): RecursiveIteratorIterator
 {
-    return ls_all($directory, $filter, RecursiveIteratorIterator::CHILD_FIRST);
+    return ls_all_recursively($directory, $filter, RecursiveIteratorIterator::CHILD_FIRST);
 }
 
 /**
@@ -221,7 +270,7 @@ function preserve_copy_recursively(string $origin, string $destination): bool
         return false;
     }
 
-    foreach (ls_all($origin) as $item) {
+    foreach (ls_all_recursively($origin) as $item) {
         $relative = substr($item, strlen($origin) + 1);
         $destPath = append($destination, $relative);
 

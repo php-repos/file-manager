@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\Directories\PreserveCopyRecursiveTest;
 
 use PhpRepos\FileManager\Directories;
 use PhpRepos\FileManager\Files;

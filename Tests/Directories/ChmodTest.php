@@ -1,6 +1,5 @@
 <?php
 
-namespace Tests\Directories\ChmodTest;
 
 use PhpRepos\FileManager\Directories;
 use function PhpRepos\FileManager\Paths\append;
